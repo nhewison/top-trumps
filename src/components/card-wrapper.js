@@ -1,49 +1,46 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import LeftCard from './left-card';
 import RightCard from './right-card';
 
-
-
 const CardWrapper = () => {
-    const[movie, setMovie] = useState(undefined);
-    const randomMovie1 = Math.floor(Math.random() * 300);
+  const [movie, setMovie] = useState(undefined);
+  const randomMovie1 = Math.floor(Math.random() * 300);
 
-    const randomMovie2 = Math.floor(Math.random() * 300);
+  const randomMovie2 = Math.floor(Math.random() * 300);
 
-    // console.log(randomMovie1);
-    // console.log(randomMovie2);
+  // console.log(randomMovie1);
+  // console.log(randomMovie2);
 
-    const fetchRandomMovie = () => {
-        const movie = fetch(`https://api.themoviedb.org/3/movie/${randomMovie1}?api_key=b016a65fe230e6e3aa336a2125bbeca0`)
-        .then((res) => res.json()) 
-        .then((data) => {return data})
-        .catch((error) => {return null})
-        return movie;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const fetchMovie = async () => {
+    try {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/${randomMovie1}?api_key=b016a65fe230e6e3aa336a2125bbeca0`,
+      );
+
+      const movieResponse = await response.json();
+      setMovie(movieResponse);
+    } catch (error) {
+      fetchMovie();
     }
+  };
 
-    React.useEffect(() => {
-        let movie = fetchRandomMovie();
-        console.log(movie)
-        if (movie){
-            setMovie(movie);
-            console.log(movie)
-            return () => movie
-        }
-        else {
-            movie = fetchRandomMovie()
-        }
+  React.useEffect(() => {
+    fetchMovie();
 
-        // .then((err) => {throw Error(err.statusText)}) 
+    if (movie) {
+      return () => movie;
+    }
+  }, [movie, fetchMovie]);
 
-    }, [movie])
-
-return (
-    <div className='wrapper'>
-        <p>hello world</p>
-        <LeftCard/>
-        <RightCard/>
+  return (
+    <div className="wrapper">
+      <p>hello world</p>
+      <LeftCard />
+      <RightCard />
     </div>
-)};
+  );
+};
 
 // data.title
 // data.popularity
@@ -51,4 +48,4 @@ return (
 // data.revenue
 // data.poster_path
 
-export default CardWrapper
+export default CardWrapper;
