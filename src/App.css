@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+
+.wrapper {
+  height: 100vh;
+  background-color: peachpuff;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  height: 300px;
+  width: 200px;
+  border: rebeccapurple 2px solid;
+}
