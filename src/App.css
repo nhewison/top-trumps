@@ -37,18 +37,63 @@
   }
 }
 
+.title {
+  display: block;
+  padding: 10px;
+  width: 200px;
+}
+
+h1 {
+  color: black;
+  font-size: 30px;
+}
 
 .wrapper {
   height: 100vh;
-  background-color: peachpuff;
+  background-color:#EEEDE7;
+  /* border: 3px solid red; */
+  display: flex;
+  flex-direction: column;
 }
 
-p {
-  margin: 0;
+.title-wrapper {
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+}
+
+.card-wrapper {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .card {
-  height: 300px;
-  width: 200px;
-  border: rebeccapurple 2px solid;
+  height: auto;
+  width: 300px;
+  background-color: gainsboro;
+  border:#B9B7BD 2px solid;
+  border-radius: 10px;
+  /* margin-top: 100px; */
+  padding: 10px;
 }
+
+.card h2 {
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  color: gray;
+  background-color: #e7d2cc;
+  border: #B9B7BD solid 2px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 3px;
+}
+
+.card img {
+  width: 150px;
+  border-radius: 10px;
+}
+
