@@ -5,6 +5,7 @@ import Card from './Card';
 const CardWrapper = () => {
     const [movieOne, setMovieOne] = useState({ title: null, popularity: null, runtime: null, revenue: null, poster_path: null });
     const [movieTwo, setMovieTwo] = useState({ title: null, popularity: null, runtime: null, revenue: null, poster_path: null });
+    const [result, setResult] = useState(null);
 
     const randomNumber = () => Math.floor(Math.random() * 300);
 
@@ -34,20 +35,34 @@ const CardWrapper = () => {
         setMovies()
     }, []) 
 
+    const compareMovieProperty = (property) => {
+        if (property === 'popularity') {
+            const gameConditions = {
+                "WIN": movieOne.popularity > movieTwo.popularity,
+                "TIE": movieOne.popularity === movieTwo.popularity,
+                "LOSER": movieOne.popularity < movieTwo.popularity
+            }
+            const result = Object.keys(gameConditions).filter(condition => gameConditions[condition])[0]
+            setResult(result)
+        }
+    }
+
     console.log({ movieOne, movieTwo });
-    console.log(movieOne.title, movieOne.popularity, movieOne.runtime, movieOne.revenue, movieOne.poster_path);
-    console.log(movieTwo.title, movieTwo.popularity, movieTwo.runtime, movieTwo.revenue, movieTwo.poster_path);
+    // console.log(movieOne.title, movieOne.popularity, movieOne.runtime, movieOne.revenue, movieOne.poster_path);
+    // console.log(movieTwo.title, movieTwo.popularity, movieTwo.runtime, movieTwo.revenue, movieTwo.poster_path);
 
     return (
         <div className='wrapper'>
             <div className='title-wrapper'><TitleSection /></div>
             <div className='card-wrapper'>
-                <Card {...movieOne}/>
+                <Card {...movieOne} compareMovieProperty={compareMovieProperty}/>
                 <Card {...movieTwo}/>
             </div>
-            
+            {result && <div>result: {result}</div>}
         </div>
     )
 };
+
+// use turnery for showing card placeholder 
 
 export default CardWrapper
