@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ title, poster_path, popularity, runtime, revenue, budget, release_date, compareMovieProperty }) => {
+const Card = ({ title, poster_path, popularity, runtime, revenue, budget, release_date, compareMovieProperty, isShown, onButtonClick }) => {
     // console.log('card', compareMovieProperty)
 
     function formatNumber(num) {
@@ -10,16 +10,50 @@ const Card = ({ title, poster_path, popularity, runtime, revenue, budget, releas
     const formattedRevenue = revenue && formatNumber(revenue)
     const formattedBudget = budget && formatNumber(budget)
 
+    if (!isShown) {
+        return (
+            <div class='placeholder'>   
+            <p>Nat's Game</p>
+            </div>
+        )
+    }
+
     return (
-        <div className='card'>
+        <div className={isShown?'card': 'card placeholder'}>
             <h2>{title}</h2>
             <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`}></img>
-            <p>Release Date: {release_date}</p>
-            <p onClick={() => compareMovieProperty("popularity")}>Popularity: {popularity}</p>
-            <p>Runtime: {runtime} mins</p>
-            <p>Budget: ${formattedBudget}</p>
-            <p>Revenue: ${formattedRevenue}</p>
+            <p onClick={() => {
+                compareMovieProperty("release_date"); 
+                if (onButtonClick){
+                  onButtonClick()  
+                }
+                }}>Release Date: {release_date}</p>
+            <p onClick={() => {
+                compareMovieProperty("popularity");
+                if (onButtonClick){
+                    onButtonClick()
+                }
+                }}>Popularity: {popularity}</p>
+            <p onClick={() => {
+                compareMovieProperty("runtime");
+                if (onButtonClick){
+                    onButtonClick()
+                }
+                }}>Runtime: {runtime} mins</p>
+            <p onClick={() => {
+                compareMovieProperty("budget");
+                if (onButtonClick){
+                    onButtonClick()
+                }
+                }}>Budget: ${formattedBudget}</p>
+            <p onClick={() => {
+                compareMovieProperty("revenue");
+                if (onButtonClick){
+                    onButtonClick()
+                }
+                }}> Revenue: ${formattedRevenue}</p>
         </div >
     )};
 
 export default Card
+
