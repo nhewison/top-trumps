@@ -7,7 +7,8 @@ const CardWrapper = () => {
     const [movieOne, setMovieOne] = useState({ title: null, popularity: null, runtime: null, revenue: null, poster_path: null });
     const [movieTwo, setMovieTwo] = useState({ title: null, popularity: null, runtime: null, revenue: null, poster_path: null });
     const [result, setResult] = useState(null);
-    const [revealCardTwo, setRevealCardTwo] = useState(false)
+    const [revealCardTwo, setRevealCardTwo] = useState(false);
+    const [rulesIsShown, setRulesIsShown] = useState(true);
 
     const showCardTwo = () => {
         setRevealCardTwo(true)
@@ -41,8 +42,10 @@ const CardWrapper = () => {
         setMovies()
     }, []) 
 
-    const refreshPage = () => {
-        window.location.reload();
+    const reset = () => {
+        setMovies();
+        setRevealCardTwo(false);
+        setResult(null);
     }
 
     const compareMovieProperty = (property) => {
@@ -98,23 +101,19 @@ const CardWrapper = () => {
 
     console.log({ movieOne, movieTwo });
 
-    // console.log(movieOne.release_date)
-
     return (
         <div className='wrapper'>
-                <RulesBox />
+            {rulesIsShown && <RulesBox setRulesIsShown={setRulesIsShown}/>}
             <div className='title-wrapper'><TitleSection /></div>
             <div className='card-wrapper'>
-                <Card isShown={true}onButtonClick={showCardTwo} {...movieOne} compareMovieProperty={compareMovieProperty}/>
+                <Card isShown onButtonClick={showCardTwo} {...movieOne} compareMovieProperty={compareMovieProperty}/>
                 <Card isShown={revealCardTwo} {...movieTwo}/>
             </div>
-            <div onClick={() => refreshPage()} className='replay'> <p>Play again!</p></div>
+            <div onClick={() => reset()} className='replay'> <p>Play again!</p></div>
             {result && <div className='results'>Result: {result}</div>}
-            </div>
+        </div>
 
     )
 };
-
-// use turnery for showing card placeholder 
 
 export default CardWrapper

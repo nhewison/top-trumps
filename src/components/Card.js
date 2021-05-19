@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Card = ({ title, poster_path, popularity, runtime, revenue, budget, release_date, compareMovieProperty, isShown, onButtonClick }) => {
-    // console.log('card', compareMovieProperty)
 
     function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
