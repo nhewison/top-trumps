@@ -10,10 +10,6 @@ const CardWrapper = () => {
     const [revealCardTwo, setRevealCardTwo] = useState(false);
     const [rulesIsShown, setRulesIsShown] = useState(true);
 
-    const showCardTwo = () => {
-        setRevealCardTwo(true)
-    }
-
     const randomNumber = () => Math.floor(Math.random() * 300);
 
     const fetchMovie = async () => {
@@ -98,6 +94,8 @@ const CardWrapper = () => {
             setResult(result)
         }
     }
+
+    const showCardTwo = () => setRevealCardTwo(true);
 
     console.log({ movieOne, movieTwo });
 
