@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/top-trumps/static/css/main.c634cb9d.chunk.css",
-    "main.js": "/top-trumps/static/js/main.254dd5e5.chunk.js",
-    "main.js.map": "/top-trumps/static/js/main.254dd5e5.chunk.js.map",
+    "main.js": "/top-trumps/static/js/main.72f11237.chunk.js",
+    "main.js.map": "/top-trumps/static/js/main.72f11237.chunk.js.map",
     "runtime-main.js": "/top-trumps/static/js/runtime-main.9510d3ec.js",
     "runtime-main.js.map": "/top-trumps/static/js/runtime-main.9510d3ec.js.map",
     "static/js/2.1ac56d99.chunk.js": "/top-trumps/static/js/2.1ac56d99.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.9510d3ec.js",
     "static/js/2.1ac56d99.chunk.js",
     "static/css/main.c634cb9d.chunk.css",
-    "static/js/main.254dd5e5.chunk.js"
+    "static/js/main.72f11237.chunk.js"
   ]
 }
