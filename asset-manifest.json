@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/top-trumps/static/css/main.c634cb9d.chunk.css",
+    "main.css": "/top-trumps/static/css/main.4f835b8a.chunk.css",
     "main.js": "/top-trumps/static/js/main.72f11237.chunk.js",
     "main.js.map": "/top-trumps/static/js/main.72f11237.chunk.js.map",
     "runtime-main.js": "/top-trumps/static/js/runtime-main.9510d3ec.js",
@@ -10,13 +10,13 @@
     "static/js/3.1ea9222d.chunk.js": "/top-trumps/static/js/3.1ea9222d.chunk.js",
     "static/js/3.1ea9222d.chunk.js.map": "/top-trumps/static/js/3.1ea9222d.chunk.js.map",
     "index.html": "/top-trumps/index.html",
-    "static/css/main.c634cb9d.chunk.css.map": "/top-trumps/static/css/main.c634cb9d.chunk.css.map",
+    "static/css/main.4f835b8a.chunk.css.map": "/top-trumps/static/css/main.4f835b8a.chunk.css.map",
     "static/js/2.1ac56d99.chunk.js.LICENSE.txt": "/top-trumps/static/js/2.1ac56d99.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9510d3ec.js",
     "static/js/2.1ac56d99.chunk.js",
-    "static/css/main.c634cb9d.chunk.css",
+    "static/css/main.4f835b8a.chunk.css",
     "static/js/main.72f11237.chunk.js"
   ]
 }
