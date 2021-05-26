@@ -5,7 +5,7 @@ const RulesBox = ({ setRulesIsShown }) => {
     return (
         <div className='rules-window'>
             <div className='rules-box'>
-                <a onClick={() => setRulesIsShown(false)} href="#" class='close-pop-up'>x</a>
+                <a onClick={() => setRulesIsShown(false)} href="#" className='close-pop-up'>x</a>
                 <div className='rules-list'>
                     <h1>Nat's Game: How to play.</h1>
                     <p>Read your Movie Card.</p>

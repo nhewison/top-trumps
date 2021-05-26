@@ -11,7 +11,7 @@ const Card = ({ title, poster_path, popularity, runtime, revenue, budget, releas
 
     if (!isShown) {
         return (
-            <div class='placeholder'>   
+            <div className='placeholder'>   
             <p>Nat's Game</p>
             </div>
         )
